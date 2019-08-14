@@ -1,0 +1,17 @@
+{
+  "name": "brain-games-slv-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "bin": {
+    "brain-games": "./src/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "brain-games-slv": "^1.0.0"
+  }
+}
