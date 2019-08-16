@@ -4,11 +4,11 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
-          node: 'current'
-        }
-      }
-    ]
-  ]
+          node: 'current',
+        },
+      },
+    ],
+  ],
   // plugins: [
   //   [
   //     '@babel/plugin-proposal-pipeline-operator',
