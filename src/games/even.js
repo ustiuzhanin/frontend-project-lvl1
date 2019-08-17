@@ -1,47 +1,47 @@
 import readlineSync from 'readline-sync';
-import { launchGame } from '..';
-import { getRandomNumber } from '../util';
+import launchGame from '..';
+import getRandomNumber from '../util';
 
-const even = () => {
-  let gameResult = {
-    isRightAnswer: false,
-    wrongAnswer: '',
-    rightAnswer: ''
-  };
+const desc = 'Answer "yes" if number even otherwise answer "no".';
 
+const even = (gameRslt) => {
   const number = getRandomNumber();
+  let result = gameRslt;
 
   console.log(`Question: ${number}`);
 
-  const answer = readlineSync.question(`Your answer: `);
+  const answer = readlineSync.question('Your answer: ');
 
   if (
-    (number % 2 === 0 && answer === 'yes') ||
-    (number % 2 !== 0 && answer === 'no')
+    (number % 2 === 0 && answer === 'yes')
+    || (number % 2 !== 0 && answer === 'no')
   ) {
-    gameResult.isRightAnswer = true;
-    return gameResult;
+    result.isRightAnswer = true;
+    return result;
   }
 
   if (number % 2 === 0 && answer === 'no') {
-    return (gameResult = {
+    result = {
       isRightAnswer: false,
       wrongAnswer: answer,
-      rightAnswer: 'yes'
-    });
+      rightAnswer: 'yes',
+    };
+    return result;
   }
   if (number % 2 !== 0 && answer === 'yes') {
-    return (gameResult = {
+    result = {
       isRightAnswer: false,
       wrongAnswer: answer,
-      rightAnswer: 'no'
-    });
+      rightAnswer: 'no',
+    };
+    return result;
   }
-  return (gameResult = {
+  result = {
     isRightAnswer: false,
     wrongAnswer: answer,
-    rightAnswer: 'no'
-  });
+    rightAnswer: 'no',
+  };
+  return result;
 };
 
-export default () => launchGame(even, 'cssd');
+export default () => launchGame(even, desc);
