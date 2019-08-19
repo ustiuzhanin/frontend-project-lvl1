@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import getRandomNumber from '../util';
+import { getRandomNumber, colors } from '../util';
 
-const desc = 'Find the greatest common divisor of given numbers.';
+
+const desc = `Find the ${colors('green')}greatest common divisor${colors(
+  'default',
+)} of given numbers.`;
 
 const gcd = (gameRslt) => {
   let result = gameRslt;
@@ -29,6 +32,7 @@ const gcd = (gameRslt) => {
     result.isRightAnswer = true;
     return result;
   }
+
   result = {
     ...result,
     isRightAnswer: false,
@@ -37,4 +41,4 @@ const gcd = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(gcd, desc);
+export default () => launchGame(gcd, desc, 'GCD');

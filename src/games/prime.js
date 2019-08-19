@@ -1,12 +1,17 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import getRandomNumber from '../util';
+import { getRandomNumber, colors } from '../util';
 
-const desc = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const desc = `Answer ${colors('green')}"yes"${colors(
+  'default',
+)} if given number is prime. Otherwise answer ${colors('red')}"no"${colors(
+  'default',
+)}.`;
 
 const prime = (gameRslt) => {
   const result = gameRslt;
-  const number = getRandomNumber(1, 2);
+  const number = getRandomNumber();
 
   if (number > 1) {
     result.rightAnswer = 'yes';
@@ -35,4 +40,4 @@ const prime = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(prime, desc);
+export default () => launchGame(prime, desc, 'Prime');

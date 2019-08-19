@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-// import { getName } from '..';
+import gameLauncher from '../gameLauncher';
 
-console.log('Welcome to the Brain Games!');
-
-// const name = getName();
-
-// console.log(`Hello, ${name}!`);
+gameLauncher();

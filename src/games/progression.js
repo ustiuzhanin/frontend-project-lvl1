@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import getRandomNumber from '../util';
+import { getRandomNumber, colors } from '../util';
 
-const desc = 'What number is missing in the progression?';
+
+const desc = `What number is ${colors(
+  'green',
+)}missing in the progression?${colors('default')}`;
 
 const progression = (gameRslt) => {
   let result = gameRslt;
@@ -36,4 +39,4 @@ const progression = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(progression, desc);
+export default () => launchGame(progression, desc, 'Progression');

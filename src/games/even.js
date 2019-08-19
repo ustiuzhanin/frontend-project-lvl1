@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import getRandomNumber from '../util';
+import { getRandomNumber, colors } from '../util';
 
-const desc = 'Answer "yes" if number even otherwise answer "no".';
+const desc = `Answer ${colors('green')}"yes"${colors(
+  'default',
+)} if number even otherwise answer ${colors('red')}"no"${colors('default')}.`;
 
 const even = (gameRslt) => {
   const number = getRandomNumber();
@@ -23,4 +25,4 @@ const even = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(even, desc);
+export default () => launchGame(even, desc, 'Even');

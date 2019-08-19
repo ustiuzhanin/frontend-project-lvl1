@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import getRandomNumber from '../util';
+import { getRandomNumber, colors } from '../util';
 
-const desc = 'What is the result of the expression?';
+
+const desc = `What is ${colors('green')}the result of the expression?${colors(
+  'default',
+)}`;
 
 const calc = (gameRslt) => {
   let result = gameRslt;
@@ -43,4 +46,4 @@ const calc = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(calc, desc);
+export default () => launchGame(calc, desc, 'Calc');
