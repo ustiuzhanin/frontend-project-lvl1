@@ -28,7 +28,8 @@ const launchGame = (game, gameDescription, gameName = 'Games') => {
           'default',
         )} is wrong answer ;(. Correct answer was ${colors('green')}"${
           result.rightAnswer
-        }"${colors('default')}.`,
+        }"${colors('default')}. 
+Let's try again, ${colors('blue')}${name}${colors('default')}!`,
       );
     }
 

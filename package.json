@@ -1,7 +1,12 @@
 {
   "name": "brain-games-slv",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Brain Games",
+  "keywords": [
+    "hexlet",
+    "brain",
+    "games"
+  ],
   "main": "",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
