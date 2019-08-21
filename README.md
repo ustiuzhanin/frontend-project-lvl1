@@ -22,7 +22,11 @@ Brain Games
 
 **Brain GCD**
 
+<script id="asciicast-os5R3etguSHMu7OxT6NffMawr" src="https://asciinema.org/a/os5R3etguSHMu7OxT6NffMawr.js" async></script>
+
 **Brain Prime**
+
+[![asciicast](https://asciinema.org/a/5uY6bdw7rasUCBTVXgB4AgJjt.svg)](https://asciinema.org/a/5uY6bdw7rasUCBTVXgB4AgJjt)
 
 **Brain Progression**
 
