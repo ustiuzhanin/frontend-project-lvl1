@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import { getRandomNumber, colors } from '../util';
+import { getRandomNumber, decorate } from '../util';
 
-
-const desc = `What is ${colors('green')}the result of the expression?${colors(
-  'default',
+const description = `What is ${decorate(
+  'the result of the expression?',
+  'green',
 )}`;
 
 const calc = (gameRslt) => {
@@ -46,4 +46,4 @@ const calc = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(calc, desc, 'Calc');
+export default () => launchGame(calc, description, 'Calc');

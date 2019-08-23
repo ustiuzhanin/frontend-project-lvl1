@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { colors } from './util';
+import { decorate } from './util';
 
 const roundsCount = 3;
 const gameResult = {
@@ -9,35 +9,33 @@ const gameResult = {
 };
 
 const launchGame = (game, gameDescription, gameName = 'Games') => {
-  console.log(
-    `${colors('blue')}Welcome to the Brain ${gameName}!${colors('default')}`,
-  );
+  console.log(`${decorate(`Welcome to the Brain ${gameName}!`, 'blue')}`);
   console.log(`${gameDescription}\n`);
 
   const name = readlineSync.question('May I have your name? ', {
     defaultInput: 'Anonymous',
   });
-  console.log(`Hello, ${colors('blue')}${name}${colors('default')}!\n`);
+  console.log(`Hello, ${decorate(name, 'blue')}!\n`);
 
   for (let i = 0; i < roundsCount; i += 1) {
     const result = game(gameResult);
 
     if (result.isRightAnswer === false) {
       return console.log(
-        `${colors('red')}"${result.wrongAnswer}"${colors(
-          'default',
-        )} is wrong answer ;(. Correct answer was ${colors('green')}"${
-          result.rightAnswer
-        }"${colors('default')}. 
-Let's try again, ${colors('blue')}${name}${colors('default')}!`,
+        `${decorate(
+          `"${result.wrongAnswer}"`,
+          'red',
+        )} is wrong answer ;(. Correct answer was ${decorate(
+          `"${result.rightAnswer}"`,
+          'green',
+        )}. 
+Let's try again, ${decorate(name, 'blue')}!`,
       );
     }
 
-    console.log(`${colors('green')}Correct! ${colors('default')}`);
+    console.log(`${decorate('Correct! ', 'green')}`);
   }
-  return console.log(
-    `${colors('blue')}Congratulations, ${name}!${colors('default')}`,
-  );
+  return console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
 };
 
 export default launchGame;

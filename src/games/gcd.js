@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 import launchGame from '..';
-import { getRandomNumber, colors } from '../util';
+import { getRandomNumber, decorate } from '../util';
 
-
-const desc = `Find the ${colors('green')}greatest common divisor${colors(
-  'default',
+const description = `Find the ${decorate(
+  'greatest common divisor',
+  'green',
 )} of given numbers.`;
 
 const gcd = (gameRslt) => {
@@ -41,4 +41,4 @@ const gcd = (gameRslt) => {
   return result;
 };
 
-export default () => launchGame(gcd, desc, 'GCD');
+export default () => launchGame(gcd, description, 'GCD');

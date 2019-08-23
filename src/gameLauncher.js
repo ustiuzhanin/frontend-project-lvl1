@@ -4,9 +4,9 @@ import startEven from './games/even';
 import startGcd from './games/gcd';
 import startPrime from './games/prime';
 import startProgression from './games/progression';
-import { colors } from './util';
+import { decorate } from './util';
 
-console.log(`${colors('blue')}Welcome to the Brain Games!${colors('default')}`);
+console.log(`${decorate('Welcome to the Brain Games!', 'blue')}`);
 
 const launcher = () => {
   const games = [
