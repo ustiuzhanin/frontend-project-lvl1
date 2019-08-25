@@ -4,18 +4,18 @@ import { getRandomNumber, decorate } from '../util';
 
 const description = `Answer ${decorate(
   '"yes"',
-  'green',
+  'green'
 )} if number even otherwise answer ${decorate('"no"', 'red')}.`;
 
-const even = (gameRslt) => {
-  const number = getRandomNumber();
+const even = gameRslt => {
+  const questionNumber = getRandomNumber();
   const result = gameRslt;
 
-  console.log(`Question: ${number}`);
+  console.log(`Question: ${questionNumber}`);
 
   const answer = readlineSync.question('Your answer: ');
 
-  result.rightAnswer = number % 2 === 0 ? 'yes' : 'no';
+  result.rightAnswer = questionNumber % 2 === 0 ? 'yes' : 'no';
 
   if (result.rightAnswer === answer) {
     result.isRightAnswer = true;
