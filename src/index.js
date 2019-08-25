@@ -6,9 +6,11 @@ const gameResult = {
   isRightAnswer: false,
   wrongAnswer: '',
   rightAnswer: '',
+  question: '',
 };
 
 const launchGame = (game, gameDescription, gameName = 'Games') => {
+  console.log('launcher');
   console.log(`${decorate(`Welcome to the Brain ${gameName}!`, 'blue')}`);
   console.log(`${gameDescription}\n`);
 
@@ -19,11 +21,13 @@ const launchGame = (game, gameDescription, gameName = 'Games') => {
 
   for (let i = 0; i < roundsCount; i += 1) {
     const result = game(gameResult);
+    console.log(`Question: ${result.question}`);
+    const answer = readlineSync.question('Your answer: ');
 
-    if (result.isRightAnswer === false) {
+    if (result.rightAnswer !== answer) {
       return console.log(
         `${decorate(
-          `"${result.wrongAnswer}"`,
+          `"${answer}"`,
           'red',
         )} is wrong answer ;(. Correct answer was ${decorate(
           `"${result.rightAnswer}"`,
@@ -34,6 +38,21 @@ Let's try again, ${decorate(name, 'blue')}!`,
     }
 
     console.log(`${decorate('Correct! ', 'green')}`);
+
+    //     if (result.isRightAnswer === false) {
+    //       return console.log(
+    //         `${decorate(
+    //           `"${result.wrongAnswer}"`,
+    //           'red'
+    //         )} is wrong answer ;(. Correct answer was ${decorate(
+    //           `"${result.rightAnswer}"`,
+    //           'green'
+    //         )}.
+    // Let's try again, ${decorate(name, 'blue')}!`
+    //       );
+    //     }
+
+    //     console.log(`${decorate('Correct! ', 'green')}`);
   }
   return console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
 };

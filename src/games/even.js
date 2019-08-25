@@ -4,10 +4,10 @@ import { getRandomNumber, decorate } from '../util';
 
 const description = `Answer ${decorate(
   '"yes"',
-  'green'
+  'green',
 )} if number even otherwise answer ${decorate('"no"', 'red')}.`;
 
-const even = gameRslt => {
+const even = (gameRslt) => {
   const questionNumber = getRandomNumber();
   const result = gameRslt;
 
