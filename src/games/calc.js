@@ -25,8 +25,8 @@ const calc = (result) => {
 
   const operandA = getRandomNumber();
   const operandB = getRandomNumber();
-  const getRandomOperator = getRandomNumber(0, operations.length);
-  const operation = operations[getRandomOperator];
+  const randomOperator = getRandomNumber(0, operations.length);
+  const operation = operations[randomOperator];
 
   gameResult.question = `${operandA} ${operation.sign} ${operandB}`;
   gameResult.rightAnswer = operation.method(operandA, operandB).toString();

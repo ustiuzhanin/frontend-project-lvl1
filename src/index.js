@@ -21,6 +21,7 @@ const launchGame = (game, gameDescription, gameName = 'Games') => {
 
   for (let i = 0; i < roundsCount; i += 1) {
     const result = game(gameResult);
+
     console.log(`Question: ${result.question}`);
     const answer = readlineSync.question('Your answer: ');
 
@@ -38,21 +39,6 @@ Let's try again, ${decorate(name, 'blue')}!`,
     }
 
     console.log(`${decorate('Correct! ', 'green')}`);
-
-    //     if (result.isRightAnswer === false) {
-    //       return console.log(
-    //         `${decorate(
-    //           `"${result.wrongAnswer}"`,
-    //           'red'
-    //         )} is wrong answer ;(. Correct answer was ${decorate(
-    //           `"${result.rightAnswer}"`,
-    //           'green'
-    //         )}.
-    // Let's try again, ${decorate(name, 'blue')}!`
-    //       );
-    //     }
-
-    //     console.log(`${decorate('Correct! ', 'green')}`);
   }
   return console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
 };
