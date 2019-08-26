@@ -9,8 +9,8 @@ const description = `Answer ${decorate(
 const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 const even = (result) => {
-  const questionNumber = getRandomNumber();
   const gameResult = result;
+  const questionNumber = getRandomNumber();
 
   gameResult.question = questionNumber;
   gameResult.rightAnswer = isEven(questionNumber);
