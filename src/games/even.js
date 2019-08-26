@@ -12,7 +12,7 @@ const even = (result) => {
   const questionNumber = getRandomNumber();
   const gameResult = result;
 
-  gameResult.question = `${questionNumber}`;
+  gameResult.question = questionNumber;
   gameResult.rightAnswer = isEven(questionNumber);
   return gameResult;
 };

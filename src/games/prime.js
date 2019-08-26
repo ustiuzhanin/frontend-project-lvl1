@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import launchGame from '..';
 import { getRandomNumber, decorate } from '../util';
 
@@ -7,35 +6,30 @@ const description = `Answer ${decorate(
   'green',
 )} if given number is prime. Otherwise answer ${decorate('"no"', 'red')}.`;
 
-const prime = (gameRslt) => {
-  const result = gameRslt;
-  const number = getRandomNumber();
-
+const isPrime = (number) => {
+  let result;
   if (number > 1) {
-    result.rightAnswer = 'yes';
+    result = 'yes';
   } else {
-    result.rightAnswer = 'no';
+    result = 'no';
   }
 
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
-      result.rightAnswer = 'no';
+      result = 'no';
       break;
     }
   }
-
-  console.log(`Question: ${number}`);
-
-  const answer = readlineSync.question('Your answer: ');
-
-  if (result.rightAnswer === answer) {
-    result.isRightAnswer = true;
-    return result;
-  }
-
-  result.isRightAnswer = false;
-  result.wrongAnswer = answer;
   return result;
+};
+
+const prime = (result) => {
+  const gameResult = result;
+  const questionNumber = getRandomNumber();
+
+  gameResult.question = questionNumber;
+  gameResult.rightAnswer = isPrime(questionNumber);
+  return gameResult;
 };
 
 export default () => launchGame(prime, description, 'Prime');
