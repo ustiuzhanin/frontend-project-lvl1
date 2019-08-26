@@ -1,5 +1,4 @@
-export const getRandomNumber = (first = 1, last = 100) =>
-  Math.floor(Math.random() * last) + first;
+export const getRandomNumber = (first = 1, last = 100) => Math.floor(Math.random() * last) + first;
 
 export const getSmallestNum = (a, b) => (a > b ? b : a);
 

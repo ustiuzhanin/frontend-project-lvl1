@@ -3,15 +3,15 @@ import {
   getRandomNumber,
   decorate,
   getSmallestNum,
-  getLargestNum
+  getLargestNum,
 } from '../util';
 
 const description = `Find the ${decorate(
   'greatest common divisor',
-  'green'
+  'green',
 )} of given numbers.`;
 
-const gcd = result => {
+const gcd = (result) => {
   const gameResult = result;
   const num1 = getRandomNumber(1, 21);
   const num2 = getRandomNumber(1, 21);
