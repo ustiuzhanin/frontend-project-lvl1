@@ -3,19 +3,16 @@ import { decorate } from './util';
 
 const roundsCount = 3;
 const gameResult = {
-  isRightAnswer: false,
-  wrongAnswer: '',
   rightAnswer: '',
-  question: '',
+  question: ''
 };
 
 const launchGame = (game, gameDescription, gameName = 'Games') => {
-  console.log('launcher');
   console.log(`${decorate(`Welcome to the Brain ${gameName}!`, 'blue')}`);
   console.log(`${gameDescription}\n`);
 
   const name = readlineSync.question('May I have your name? ', {
-    defaultInput: 'Anonymous',
+    defaultInput: 'Anonymous'
   });
   console.log(`Hello, ${decorate(name, 'blue')}!\n`);
 
@@ -29,12 +26,12 @@ const launchGame = (game, gameDescription, gameName = 'Games') => {
       return console.log(
         `${decorate(
           `"${answer}"`,
-          'red',
+          'red'
         )} is wrong answer ;(. Correct answer was ${decorate(
           `"${result.rightAnswer}"`,
-          'green',
+          'green'
         )}. 
-Let's try again, ${decorate(name, 'blue')}!`,
+Let's try again, ${decorate(name, 'blue')}!`
       );
     }
 

@@ -1,4 +1,9 @@
-export const getRandomNumber = (first = 1, last = 100) => Math.floor(Math.random() * last) + first;
+export const getRandomNumber = (first = 1, last = 100) =>
+  Math.floor(Math.random() * last) + first;
+
+export const getSmallestNum = (a, b) => (a > b ? b : a);
+
+export const getLargestNum = (a, b) => (a > b ? a : b);
 
 export const decorate = (str, color) => {
   switch (color) {

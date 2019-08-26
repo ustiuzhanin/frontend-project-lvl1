@@ -1,17 +1,20 @@
 import launchGame from '..';
-import { getRandomNumber, decorate } from '../util';
+import {
+  getRandomNumber,
+  decorate,
+  getSmallestNum,
+  getLargestNum
+} from '../util';
 
 const description = `Find the ${decorate(
   'greatest common divisor',
-  'green',
+  'green'
 )} of given numbers.`;
 
-const gcd = (result) => {
+const gcd = result => {
   const gameResult = result;
   const num1 = getRandomNumber(1, 21);
   const num2 = getRandomNumber(1, 21);
-  const getSmallestNum = (a, b) => (a > b ? b : a);
-  const getLargestNum = (a, b) => (a > b ? a : b);
 
   const smallestNum = getSmallestNum(num1, num2);
   const largestNum = getLargestNum(num1, num2);
