@@ -4,7 +4,7 @@ import startEven from './games/even';
 import startGcd from './games/gcd';
 import startPrime from './games/prime';
 import startProgression from './games/progression';
-import { decorate } from './util';
+import { decorate } from './utils';
 
 console.log(`${decorate('Welcome to the Brain Games!', 'blue')}`);
 

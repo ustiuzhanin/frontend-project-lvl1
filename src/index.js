@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { decorate } from './util';
+import { decorate } from './utils';
 
 const roundsCount = 3;
 const gameResult = {
