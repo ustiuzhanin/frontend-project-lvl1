@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import gameLauncher from '../gameLauncher';
+import launchMenu from '../gameLauncher';
 
-gameLauncher();
+launchMenu();

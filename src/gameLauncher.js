@@ -8,14 +8,15 @@ import { decorate } from './utils';
 
 console.log(`${decorate('Welcome to the Brain Games!', 'blue')}`);
 
-const launcher = () => {
-  const games = [
-    'brain-calc',
-    'brain-even',
-    'brain-gcd',
-    'brain-prime',
-    'brain-progression',
-  ];
+const games = [
+  'brain-calc',
+  'brain-even',
+  'brain-gcd',
+  'brain-prime',
+  'brain-progression',
+];
+
+const launchMenu = () => {
   const index = readlineSync.keyInSelect(
     games,
     'Please choose a game you would like to play!',
@@ -42,4 +43,4 @@ const launcher = () => {
       break;
   }
 };
-export default launcher;
+export default launchMenu;

@@ -2,10 +2,6 @@ import readlineSync from 'readline-sync';
 import { decorate } from './utils';
 
 const roundsCount = 3;
-const gameResult = {
-  rightAnswer: '',
-  question: '',
-};
 
 const launchGame = (game, gameDescription, gameName = 'Games') => {
   console.log(`${decorate(`Welcome to the Brain ${gameName}!`, 'blue')}`);
@@ -17,22 +13,22 @@ const launchGame = (game, gameDescription, gameName = 'Games') => {
   console.log(`Hello, ${decorate(name, 'blue')}!\n`);
 
   for (let i = 0; i < roundsCount; i += 1) {
-    const result = game(gameResult);
+    const result = game();
 
     console.log(`Question: ${result.question}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (result.rightAnswer !== answer) {
-      return console.log(
-        `${decorate(
-          `"${answer}"`,
-          'red',
-        )} is wrong answer ;(. Correct answer was ${decorate(
-          `"${result.rightAnswer}"`,
-          'green',
-        )}. 
-Let's try again, ${decorate(name, 'blue')}!`,
-      );
+      const wrongAnswerMessage = `${decorate(
+        `"${answer}"`,
+        'red',
+      )} is wrong answer ;(. Correct answer was ${decorate(
+        `"${result.rightAnswer}"`,
+        'green',
+      )}.\n`;
+      const tryAgainMessage = `Let's try again, ${decorate(name, 'blue')}!`;
+
+      return console.log(wrongAnswerMessage + tryAgainMessage);
     }
 
     console.log(`${decorate('Correct! ', 'green')}`);
