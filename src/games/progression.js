@@ -11,7 +11,9 @@ const generateProgression = () => {
   const progressionStart = getRandomNumber();
   const progressionLength = 10;
   const hiddenItemIndex = getRandomNumber(0, progressionLength);
-  const step = getRandomNumber(2, 10);
+  const stepSmallest = 2;
+  const stepBiggest = 10;
+  const step = getRandomNumber(stepSmallest, stepBiggest);
 
   let i = progressionStart;
   while (progressionQuestion.length < progressionLength) {

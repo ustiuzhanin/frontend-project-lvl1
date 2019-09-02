@@ -3,8 +3,8 @@ import { decorate } from './utils';
 
 const roundsCount = 3;
 
-const launchGame = (game, gameDescription, gameName = 'Games') => {
-  console.log(`${decorate(`Welcome to the Brain ${gameName}!`, 'blue')}`);
+const launchGame = (game, gameDescription) => {
+  console.log(`${decorate('Welcome to the Brain Games!', 'blue')}`);
   console.log(`${gameDescription}\n`);
 
   const name = readlineSync.question('May I have your name? ', {
