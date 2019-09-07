@@ -1,12 +1,14 @@
 import launchGame from '..';
-import { getRandomNumber, decorate, isEven } from '../utils';
+import { getRandomNumber, decorate } from '../utils';
 
 const description = `Answer ${decorate(
   '"yes"',
   'green',
 )} if number even otherwise answer ${decorate('"no"', 'red')}.`;
 
-const generateEven = () => {
+const isEven = (number) => number % 2 === 0;
+
+const generateQuestionForEven = () => {
   const question = getRandomNumber();
   const rightAnswer = isEven(question) ? 'yes' : 'no';
 
@@ -16,4 +18,4 @@ const generateEven = () => {
   };
 };
 
-export default () => launchGame(generateEven, description, 'Even');
+export default () => launchGame(generateQuestionForEven, description);

@@ -1,12 +1,24 @@
 import launchGame from '..';
-import { getRandomNumber, decorate, getGcd } from '../utils';
+import { getRandomNumber, decorate } from '../utils';
 
 const description = `Find the ${decorate(
   'greatest common divisor',
   'green',
 )} of given numbers.`;
 
-const generateGcd = () => {
+const getGcd = (num1, num2) => {
+  const smallest = Math.min(num1, num2);
+  const largest = Math.max(num1, num2);
+
+  for (let i = smallest; i > 0; i -= 1) {
+    if (smallest % i === 0 && largest % i === 0) {
+      return i;
+    }
+  }
+  return null;
+};
+
+const generateQuestionForGcd = () => {
   const num1 = getRandomNumber(1, 21);
   const num2 = getRandomNumber(1, 21);
 
@@ -19,4 +31,4 @@ const generateGcd = () => {
   };
 };
 
-export default () => launchGame(generateGcd, description, 'GCD');
+export default () => launchGame(generateQuestionForGcd, description);

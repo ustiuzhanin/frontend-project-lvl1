@@ -6,24 +6,21 @@ const description = `What number is ${decorate(
   'green',
 )}`;
 
-const generateProgression = () => {
-  const progressionQuestion = [];
-  const progressionStart = getRandomNumber();
-  const progressionLength = 10;
-  const hiddenItemIndex = getRandomNumber(0, progressionLength);
-  const stepSmallest = 2;
-  const stepBiggest = 10;
-  const step = getRandomNumber(stepSmallest, stepBiggest);
+const length = 10;
 
-  let i = progressionStart;
-  while (progressionQuestion.length < progressionLength) {
-    progressionQuestion.push(i);
-    i += step;
+const generateQuestionForProgression = () => {
+  let progression = '';
+  const start = getRandomNumber();
+  const diff = getRandomNumber(2, 10);
+  const hiddenItemIndex = getRandomNumber(0, length);
+
+  for (let i = 0; i < length; i += 1) {
+    const element = i === hiddenItemIndex ? '..' : start + diff * i;
+    progression += `${element} `;
   }
 
-  const rightAnswer = progressionQuestion[hiddenItemIndex].toString();
-  progressionQuestion[hiddenItemIndex] = '..';
-  const question = progressionQuestion.join(' ');
+  const rightAnswer = (start + diff * hiddenItemIndex).toString();
+  const question = progression;
 
   return {
     rightAnswer,
@@ -31,4 +28,4 @@ const generateProgression = () => {
   };
 };
 
-export default () => launchGame(generateProgression, description, 'Progression');
+export default () => launchGame(generateQuestionForProgression, description);

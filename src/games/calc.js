@@ -21,10 +21,10 @@ const operations = [
   },
 ];
 
-const generateCalc = () => {
+const generateQuestionForCalc = () => {
   const operandA = getRandomNumber();
   const operandB = getRandomNumber();
-  const operation = operations[getRandomNumber(0, operations.length)];
+  const operation = operations[getRandomNumber(0, operations.length - 1)];
 
   const question = `${operandA} ${operation.sign} ${operandB}`;
   const rightAnswer = operation.method(operandA, operandB).toString();
@@ -35,4 +35,4 @@ const generateCalc = () => {
   };
 };
 
-export default () => launchGame(generateCalc, description, 'Calc');
+export default () => launchGame(generateQuestionForCalc, description);
