@@ -7,12 +7,13 @@ const description = `Answer ${decorate(
 )} if given number is prime. Otherwise answer ${decorate('"no"', 'red')}.`;
 
 const isPrime = (number) => {
-  for (let i = 2; i < number / 2; i += 1) {
+  if (number <= 1) return false;
+  for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-  return number > 1;
+  return true;
 };
 
 const generateQuestionForPrime = () => {

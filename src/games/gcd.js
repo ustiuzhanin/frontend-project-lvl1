@@ -15,7 +15,7 @@ const getGcd = (num1, num2) => {
       return i;
     }
   }
-  return null;
+  return 1;
 };
 
 const generateQuestionForGcd = () => {
