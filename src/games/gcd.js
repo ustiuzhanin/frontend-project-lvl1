@@ -6,6 +6,7 @@ const description = `Find the ${decorate(
   'green',
 )} of given numbers.`;
 
+// eslint-disable-next-line consistent-return
 const getGcd = (num1, num2) => {
   const smallest = Math.min(num1, num2);
   const largest = Math.max(num1, num2);
@@ -15,7 +16,6 @@ const getGcd = (num1, num2) => {
       return i;
     }
   }
-  return 1;
 };
 
 const generateQuestionForGcd = () => {

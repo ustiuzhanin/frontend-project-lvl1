@@ -12,7 +12,12 @@ const launchGame = (runGame, gameDescription) => {
   });
   console.log(`Hello, ${decorate(name, 'blue')}!\n`);
 
-  for (let i = 0; i < roundsCount; i += 1) {
+  const launchRound = (acc) => {
+    if (acc === roundsCount) {
+      console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
+      return;
+    }
+
     const { rightAnswer, question } = runGame();
 
     console.log(`Question: ${question}`);
@@ -34,8 +39,11 @@ const launchGame = (runGame, gameDescription) => {
     }
 
     console.log(`${decorate('Correct!', 'green')}`);
-  }
-  console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
+
+    launchRound(acc + 1);
+  };
+
+  return launchRound(0);
 };
 
 export default launchGame;
