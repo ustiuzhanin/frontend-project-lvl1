@@ -3,20 +3,10 @@ import { getRandomNumber, decorate } from '../utils';
 
 const description = `Find the ${decorate(
   'greatest common divisor',
-  'green',
+  'green'
 )} of given numbers.`;
 
-// eslint-disable-next-line consistent-return
-const getGcd = (num1, num2) => {
-  const smallest = Math.min(num1, num2);
-  const largest = Math.max(num1, num2);
-
-  for (let i = smallest; i > 0; i -= 1) {
-    if (smallest % i === 0 && largest % i === 0) {
-      return i;
-    }
-  }
-};
+const getGcd = (num1, num2) => (!num2 ? num1 : getGcd(num2, num1 % num2));
 
 const generateRoundData = () => {
   const num1 = getRandomNumber(1, 21);
@@ -27,7 +17,7 @@ const generateRoundData = () => {
 
   return {
     question,
-    rightAnswer,
+    rightAnswer
   };
 };
 
