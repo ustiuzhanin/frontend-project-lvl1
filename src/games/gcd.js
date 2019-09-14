@@ -18,7 +18,7 @@ const getGcd = (num1, num2) => {
   }
 };
 
-const generateQuestionForGcd = () => {
+const generateRoundData = () => {
   const num1 = getRandomNumber(1, 21);
   const num2 = getRandomNumber(1, 21);
 
@@ -31,4 +31,4 @@ const generateQuestionForGcd = () => {
   };
 };
 
-export default () => launchGame(generateQuestionForGcd, description);
+export default () => launchGame(generateRoundData, description);

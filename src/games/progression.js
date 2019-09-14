@@ -8,7 +8,7 @@ const description = `What number is ${decorate(
 
 const length = 10;
 
-const generateQuestionForProgression = () => {
+const generateRoundData = () => {
   let progression = '';
   const start = getRandomNumber();
   const diff = getRandomNumber(2, 10);
@@ -28,4 +28,4 @@ const generateQuestionForProgression = () => {
   };
 };
 
-export default () => launchGame(generateQuestionForProgression, description);
+export default () => launchGame(generateRoundData, description);

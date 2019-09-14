@@ -8,7 +8,7 @@ const description = `Answer ${decorate(
 
 const isEven = (number) => number % 2 === 0;
 
-const generateQuestionForEven = () => {
+const generateRoundData = () => {
   const question = getRandomNumber();
   const rightAnswer = isEven(question) ? 'yes' : 'no';
 
@@ -18,4 +18,4 @@ const generateQuestionForEven = () => {
   };
 };
 
-export default () => launchGame(generateQuestionForEven, description);
+export default () => launchGame(generateRoundData, description);

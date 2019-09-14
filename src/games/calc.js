@@ -21,7 +21,7 @@ const operations = [
   },
 ];
 
-const generateQuestionForCalc = () => {
+const generateRoundData = () => {
   const operandA = getRandomNumber();
   const operandB = getRandomNumber();
   const operation = operations[getRandomNumber(0, operations.length - 1)];
@@ -35,4 +35,4 @@ const generateQuestionForCalc = () => {
   };
 };
 
-export default () => launchGame(generateQuestionForCalc, description);
+export default () => launchGame(generateRoundData, description);
