@@ -3,7 +3,7 @@ import { decorate } from './utils';
 
 const roundsCount = 3;
 
-const launchGame = (runGame, gameDescription) => {
+const playGame = (runGame, gameDescription) => {
   console.log(`${decorate('Welcome to the Brain Games!', 'blue')}`);
   console.log(`${gameDescription}\n`);
 
@@ -43,7 +43,7 @@ const launchGame = (runGame, gameDescription) => {
     launchRound(acc + 1);
   };
 
-  return launchRound(0);
+  launchRound(0);
 };
 
-export default launchGame;
+export default playGame;

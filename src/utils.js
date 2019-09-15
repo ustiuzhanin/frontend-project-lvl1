@@ -1,5 +1,4 @@
-export const getRandomNumber = (min = 1, max = 100) =>
-  Math.floor(Math.random() * (max - min + 1) + min); // eslint-disable-line
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const decorate = (str, color) => {
   switch (color) {
