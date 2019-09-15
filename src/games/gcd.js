@@ -1,4 +1,4 @@
-import launchGame from '..';
+import playGame from '..';
 import { getRandomNumber, decorate } from '../utils';
 
 const description = `Find the ${decorate(
@@ -21,4 +21,4 @@ const generateRoundData = () => {
   };
 };
 
-export default () => launchGame(generateRoundData, description);
+export default () => playGame(generateRoundData, description);

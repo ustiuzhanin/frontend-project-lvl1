@@ -1,16 +1,16 @@
-import launchGame from '..';
+import playGame from '..';
 import { getRandomNumber, decorate } from '../utils';
 
 const description = `What number is ${decorate(
   'missing in the progression?',
-  'green',
+  'green'
 )}`;
 
 const length = 10;
 
 const generateRoundData = () => {
   let progression = '';
-  const start = getRandomNumber();
+  const start = getRandomNumber(1, 100);
   const diff = getRandomNumber(2, 10);
   const hiddenItemIndex = getRandomNumber(0, length);
 
@@ -24,8 +24,8 @@ const generateRoundData = () => {
 
   return {
     rightAnswer,
-    question,
+    question
   };
 };
 
-export default () => launchGame(generateRoundData, description);
+export default () => playGame(generateRoundData, description);

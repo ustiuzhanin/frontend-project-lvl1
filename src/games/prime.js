@@ -1,12 +1,12 @@
-import launchGame from '..';
+import playGame from '..';
 import { getRandomNumber, decorate } from '../utils';
 
 const description = `Answer ${decorate(
   '"yes"',
-  'green',
+  'green'
 )} if given number is prime. Otherwise answer ${decorate('"no"', 'red')}.`;
 
-const isPrime = (number) => {
+const isPrime = number => {
   if (number <= 1) return false;
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
@@ -17,13 +17,13 @@ const isPrime = (number) => {
 };
 
 const generateRoundData = () => {
-  const question = getRandomNumber();
+  const question = getRandomNumber(1, 100);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
   return {
     question,
-    rightAnswer,
+    rightAnswer
   };
 };
 
-export default () => launchGame(generateRoundData, description);
+export default () => playGame(generateRoundData, description);
