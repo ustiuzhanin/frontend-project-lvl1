@@ -3,22 +3,22 @@ import { getRandomNumber, decorate } from '../utils';
 
 const description = `What is ${decorate(
   'the result of the expression?',
-  'green'
+  'green',
 )}`;
 
 const operations = [
   {
     sign: '+',
-    method: (a, b) => a + b
+    method: (a, b) => a + b,
   },
   {
     sign: '-',
-    method: (a, b) => a - b
+    method: (a, b) => a - b,
   },
   {
     sign: '*',
-    method: (a, b) => a * b
-  }
+    method: (a, b) => a * b,
+  },
 ];
 
 const generateRoundData = () => {
@@ -31,7 +31,7 @@ const generateRoundData = () => {
 
   return {
     question,
-    rightAnswer
+    rightAnswer,
   };
 };
 

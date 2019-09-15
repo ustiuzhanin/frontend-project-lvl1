@@ -3,7 +3,7 @@ import { getRandomNumber, decorate } from '../utils';
 
 const description = `Find the ${decorate(
   'greatest common divisor',
-  'green'
+  'green',
 )} of given numbers.`;
 
 const getGcd = (num1, num2) => (!num2 ? num1 : getGcd(num2, num1 % num2));
@@ -17,7 +17,7 @@ const generateRoundData = () => {
 
   return {
     question,
-    rightAnswer
+    rightAnswer,
   };
 };
 

@@ -3,10 +3,10 @@ import { getRandomNumber, decorate } from '../utils';
 
 const description = `Answer ${decorate(
   '"yes"',
-  'green'
+  'green',
 )} if given number is prime. Otherwise answer ${decorate('"no"', 'red')}.`;
 
-const isPrime = number => {
+const isPrime = (number) => {
   if (number <= 1) return false;
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
@@ -22,7 +22,7 @@ const generateRoundData = () => {
 
   return {
     question,
-    rightAnswer
+    rightAnswer,
   };
 };
 

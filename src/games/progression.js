@@ -3,7 +3,7 @@ import { getRandomNumber, decorate } from '../utils';
 
 const description = `What number is ${decorate(
   'missing in the progression?',
-  'green'
+  'green',
 )}`;
 
 const length = 10;
@@ -16,7 +16,7 @@ const generateRoundData = () => {
 
   for (let i = 0; i < length; i += 1) {
     const element = i === hiddenItemIndex ? '..' : start + diff * i;
-    progression += `${element} `;
+    progression = progression ? `${progression} ${element}` : `${element}`;
   }
 
   const rightAnswer = (start + diff * hiddenItemIndex).toString();
@@ -24,7 +24,7 @@ const generateRoundData = () => {
 
   return {
     rightAnswer,
-    question
+    question,
   };
 };
 
