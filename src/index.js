@@ -12,8 +12,8 @@ const playGame = (runGame, gameDescription) => {
   });
   console.log(`Hello, ${decorate(name, 'blue')}!\n`);
 
-  const launchRound = (acc) => {
-    if (acc === roundsCount) {
+  const launchRound = (counter) => {
+    if (counter === roundsCount) {
       console.log(`${decorate(`Congratulations, ${name}!`, 'blue')}`);
       return;
     }
@@ -40,7 +40,7 @@ const playGame = (runGame, gameDescription) => {
 
     console.log(`${decorate('Correct!', 'green')}`);
 
-    launchRound(acc + 1);
+    launchRound(counter + 1);
   };
 
   launchRound(0);
